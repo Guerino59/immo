@@ -1,0 +1,472 @@
+*, ::before, ::after{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+@font-face {
+    font-family: "Aneliza";
+    src: url(../assets/fonts/Aneliza-Bold/Aneliza-Regular.ttf);
+}
+@font-face {
+    font-family: "AnelizaSB";
+    src: url(../assets/fonts/Aneliza-Bold/Aneliza-SemiBold.ttf);
+}
+@font-face {
+    font-family: "AnelizaB";
+    src: url(../assets/fonts/Aneliza-Bold/Aneliza-Bold.ttf);
+}
+:root{
+    --mainColor: #34193c;
+    --mainLight: #89439e;
+    --sideColor: #a4cf37;
+    --grey: #e9e7ea;
+}
+body{
+    min-height: 100vh;
+}
+header{
+    position: relative;
+    height: 65vh;
+    background:url(../assets/images/header/headerbg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.loader{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    background-color: var(--grey);
+}
+.cercle{
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+.cercle i{
+    font-size: 100px;
+    color: var(--sideColor);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.anim{
+    position: relative;
+    width: 350px;
+    height: 350px; 
+    border-radius: 50%;
+    border: 50px solid var(--mainColor);
+    animation: rotate 3s linear infinite;
+}
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }to{
+        transform: rotate(360deg);
+    }
+}
+.navbar{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 15vh;
+}
+.logo{
+    position: relative;
+    height: 100%;
+    aspect-ratio: 1/1;
+    margin-right: 13vw;
+}
+.logo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.client{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.client a{
+    color: var(--grey);
+    background-color: var(--mainColor);
+    font-weight: bold;
+    border: solid 1px white;
+    padding:10px;
+    text-align: center;
+    text-decoration: none;
+}
+.client .socials{
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--grey);
+}
+.socials div{
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    width: 100%;
+}
+.socials div:nth-child(2)
+{
+    background-color: var(--sideColor);
+}
+.socials div:nth-child(1)
+{
+    background-color: #beee43;
+}
+.socials div:nth-child(3)
+{
+    background-color: #87aa2f;
+}
+.socials i{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    
+}
+.accroche, .principale, .asterisque{
+    padding: 0px 5px;
+    font-family: "AnelizaSB";
+}
+.accroche{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    margin-left: 20px;
+}
+.accroche span:nth-child(1){
+    color: var(--grey);
+}
+.accroche span:nth-child(2){
+    color: var(--sideColor);
+    font-weight: bold;
+}
+.principale{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    align-items: center;
+    font-family: "AnelizaB";
+    width: 100%;
+}
+.principale .hono{
+    color: var(--mainLight)
+}
+
+.percent{
+    position: relative;
+    width: 20%;
+}
+.percent span:nth-child(1){
+    font-size: 70px;
+    color: var(--grey);
+    
+}
+.percent span:nth-child(2){
+    position: absolute;
+    font-size: 50px;
+    bottom: 40%;
+    left: 90%;
+    transform: translateX(-50%);
+    color: var(--grey);
+}
+.percent span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    left: 60%;
+    color: var(--grey);
+}
+.inline{
+    display: flex;
+    width: 100%;
+}
+.coucou{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    color: var(--grey);
+    text-align: end;
+}
+.coucou span:nth-child(2){
+    font-size: 3rem;
+}
+.asterisque{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 0.5rem;
+    color: var(--grey);
+    margin-top: 40px;
+}
+.title a{
+    font-family: "AnelizaB";
+    color: var(--grey);
+    background-color: var(--sideColor);
+    font-weight: bold;
+    padding:20px 15px;
+    text-align: center;
+    text-decoration: none;
+    width: fit-content;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.menu{
+    height: 35vh;
+    background-color: var(--mainColor);
+    
+}
+.menu ul{
+    font-family: "AnelizaB";
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    height: 100%;
+    place-items: center;
+}
+.menu ul li{
+    list-style-type: none;
+}
+.menu ul li:hover a{
+    background-color: var(--mainLight);
+}
+
+.menu ul li a{
+    color: var(--grey);
+    text-decoration: none;
+    transition: all 0.5s linear;
+    font-size: 0.8rem;
+    padding: 10px;
+}
+.menu ul li:nth-child(5){
+    grid-column: 1/3;
+}
+/* ----------------------------- */
+
+#qui{
+    position: relative;
+    height: 100vh;
+    font-family: "Aneliza";
+    color: var(--mainColor);
+}
+#qui span{
+    font-family: "AnelizaB";
+}
+#qui p:nth-child(2){
+    text-align: center;
+}
+#qui p:nth-child(3){
+    text-align: center;
+    margin-bottom: 30PX;
+}
+#qui h2:nth-child(1){
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.service{
+    display: grid;
+    height: 45vh;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    place-items: center;
+}
+.item{
+    position: relative;
+    width: 80%;
+    height: 80%;
+}
+.item i{
+    background-color:var(--mainColor);
+    color: var(--sideColor);
+    padding: 15px;
+    border-radius: 50%;
+    margin-left: 45px;
+}
+.item p {
+    margin-top: 10px;
+    font-family: "AnelizaB";
+    font-size: 1.2rem;
+    width: 100%;
+}
+#qui a{
+    font-family: "AnelizaB";
+    color: var(--grey);
+    background-color: var(--sideColor);
+    font-weight: bold;
+    padding:20px 15px;
+    text-align: center;
+    text-decoration: none;
+    width: 80%;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#outils{
+    background:url(../assets/images/header/headerbg.jpg);
+    background-position: 100%;
+    background-size: contain;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    font-family: "Aneliza";
+    color: var(--mainLight);
+}
+#outils h2{
+    margin-top: 20px;
+    color: var(--grey);
+}
+.diag{
+    margin-top: 10px;
+}
+.item-outils{
+    width: 90%;
+    background-color: white;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo-outils{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.item-outils p{
+    text-align: center;
+    padding: 10px;
+}
+.item-outils a{
+    text-align: center;
+    padding: 15px 30px;
+    background-color: black;
+    text-decoration: none;
+    background-color: var(--mainLight);
+    color: var(--grey);
+}
+#search{
+    position: relative;
+    background-color: var(--grey);
+    color: var(--mainColor);
+    font-family: "Aneliza";
+    height: 50vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,1fr);
+}
+#search h2
+{
+    margin-top: 30px;
+    text-align: center;
+    grid-column: 1/3;
+}
+#search a{
+    grid-column: 1/3;
+    grid-row: 4/5;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-family: "AnelizaB";
+    color: var(--grey);
+    background-color: var(--sideColor);
+    font-weight: bold;
+    padding:20px 15px;
+    text-decoration: none;
+    width: 60%;
+    margin-bottom: 60px;
+}
+.type, .loc{
+    text-align: center;
+}
+.budget{
+    position: relative;
+    grid-column: 1/3;
+    text-align: center;
+}
+.budget label:nth-child(1){
+    position: absolute;
+    top: -30%;
+}
+.loc input{
+    margin-top: 10px;
+}
+.type select{
+    margin-top: 10px;
+}
+.hover{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#bien{
+    min-height: 100vh;
+}
+#bien h2{
+    color: var(--mainColor);
+    text-align: center;
+    font-family: "Aneliza";
+}
+.bienAffiche
+{
+    display: grid;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    gap: 10px;
+}
+img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    
+}
+#contact{
+    font-family: "aneliza";
+}
+#contact h2{
+    text-align: center;
+}
+.form{
+    color: var(--mainColor);
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+input[type="submit"]{
+    width: 20%;
+    display: block;
+    margin: auto;
+    color: var(--grey);
+    background-color: var(--sideColor);
+    font-weight: bold;
+    padding:10px 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
