@@ -438,6 +438,13 @@ header{
     margin: auto;
     gap: 10px;
 }
+.indiv{
+    display: flex;
+    flex-direction: column;
+}
+.indiv h2{
+    position: absolute;
+}
 img{
     width: 100%;
     aspect-ratio: 1/1;
