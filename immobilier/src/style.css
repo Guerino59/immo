@@ -3,6 +3,9 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 @font-face {
     font-family: "Aneliza";
     src: url(../assets/fonts/Aneliza-Bold/Aneliza-Regular.ttf);
@@ -425,7 +428,7 @@ header{
 #bien{
     min-height: 100vh;
 }
-#bien h2{
+.tBien{
     color: var(--mainColor);
     text-align: center;
     font-family: "Aneliza";
@@ -438,17 +441,59 @@ header{
     margin: auto;
     gap: 10px;
 }
-.indiv{
+.infoBien{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     display: flex;
     flex-direction: column;
+    gap: 20px;
+    font-family: "AnelizaSB";
+    color: var(--grey);
+    background-image: url(../assets/images/header/headerbg.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: opacity 1s ease;
+    opacity: 0;
 }
-.indiv h2{
-    position: absolute;
+
+.infoBien:hover{
+    opacity: 0.9;
+}
+.infoBien h2{
+    display: block;
+    width: 70%;
+    margin: auto;
+    font-size: 2.2rem;
+}
+.infoBien h3{
+    font-size: 1.5rem;
+    opacity: 1;
+}
+.infoBien p{
+    font-size: 3rem;
+}
+.infoBien a{
+    font-size: 1.5rem;
+    background-color: var(--sideColor);
+    font-weight: bold;
+    padding:20px 15px;
+    text-decoration: none;
+    display: block;
+    width: 70%;
+    margin: auto;
+    cursor: pointer;
+}
+.indiv{
+    position: relative;
+    height: fit-content;  
 }
 img{
     width: 100%;
-    aspect-ratio: 1/1;
-    
+    aspect-ratio: 1/1;  
 }
 #contact{
     font-family: "aneliza";

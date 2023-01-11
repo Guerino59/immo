@@ -33,8 +33,7 @@ const localisation = document.querySelector("#localisation");
 const type = document.querySelector("#type");
 
 function showAll(data) {
-  type.addEventListener("input", (e) => {
-    e.preventDefault();
+  
     dispImg.innerHTML = "";
     if (type.value == "Tous type") {
       showApp(data);
@@ -50,20 +49,31 @@ function showAll(data) {
     if (type.value == "Terrain") {
       showTer(data);
     }
-  });
+  showLoc(data)
 }
 function showApp(data) {
   for (let i = 0; i < data.appartement.length; i++) {
     const img = document.createElement("img");
     const div = document.createElement("div");
-    const h2 = document.createElement("h2");
-    h2.textContent = data.appartement[i].titre;
+    const infoBien = document.createElement('div');
+    const titre = document.createElement("h2");
+    const ville = document.createElement('h3'); 
+    const prix = document.createElement('p');
+    const button = document.createElement("a");
+    button.textContent = "EN SAVOIR PLUS" 
+    ville.textContent = data.appartement[i].ville;
+    titre.textContent = data.appartement[i].titre;
+    prix.textContent = `${data.appartement[i].prix} €`;
     div.classList.add("indiv");
+    infoBien.classList.add("infoBien")
     img.src = `../assets/images/immobilier/${data.appartement[i].photos}`;
     div.append(img);
-    div.append(h2);
+    div.append(infoBien);
+    infoBien.append(titre);
+    infoBien.append(ville);
+    infoBien.append(prix);
+    infoBien.append(button);
     dispImg.append(div);
-    console.log(img.src);
   }
 }
 function showMai(data) {
@@ -74,7 +84,6 @@ function showMai(data) {
     img.src = `../assets/images/immobilier/${data.maison[i].photos}`;
     div.append(img);
     dispImg.append(div);
-    console.log(img.src);
   }
 }
 function showTer(data) {
@@ -85,7 +94,36 @@ function showTer(data) {
     img.src = `../assets/images/immobilier/${data.terrain[i].photos}`;
     div.append(img);
     dispImg.append(div);
-    console.log(img.src);
   }
 }
-find();
+function showLoc(data) {
+  dispImg.innerHTML = "";
+    for (let i = 0; i < data.appartement.length; i++) {
+      if (localisation.value == data.appartement[i].ville){
+        const img = document.createElement("img");
+        const div = document.createElement("div");
+        const infoBien = document.createElement('div');
+        const titre = document.createElement("h2");
+        const ville = document.createElement('h3'); 
+        const prix = document.createElement('p');
+        const button = document.createElement("a");
+        button.textContent = "EN SAVOIR PLUS" 
+        ville.textContent = data.appartement[i].ville;
+        titre.textContent = data.appartement[i].titre;
+        prix.textContent = `${data.appartement[i].prix} €`;
+        div.classList.add("indiv");
+        infoBien.classList.add("infoBien")
+        img.src = `../assets/images/immobilier/${data.appartement[i].photos}`;
+        div.append(img);
+        div.append(infoBien);
+        infoBien.append(titre);
+        infoBien.append(ville);
+        infoBien.append(prix);
+        infoBien.append(button);
+        dispImg.append(div);
+      }
+  }
+}
+
+search.addEventListener('click', find);
+
