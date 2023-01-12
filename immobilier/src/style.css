@@ -291,18 +291,21 @@ header{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     place-items: center;
+    margin-top: 10vh;
 }
 .item{
     position: relative;
     width: 80%;
-    height: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .item i{
     background-color:var(--mainColor);
     color: var(--sideColor);
     padding: 15px;
     border-radius: 50%;
-    margin-left: 45px;
 }
 .item p {
     margin-top: 10px;
@@ -320,7 +323,7 @@ header{
     text-decoration: none;
     width: 80%;
     position: absolute;
-    bottom: 70px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -432,6 +435,15 @@ header{
     color: var(--mainColor);
     text-align: center;
     font-family: "Aneliza";
+}
+#choix a{
+    text-decoration: none;
+}
+#choix{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 .bienAffiche
 {
